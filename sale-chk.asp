@@ -1,0 +1,17 @@
+<!-- #include file="sale-chk.inc" -->
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁1</title>
+</head>
+
+<body>
+<% Call Register() %>
+
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>公司名稱</title>
+</head>
+<script language="vbscript">
+<!--
+
+Sub datacheck()
+  dim syear, smonth, sday, sdate
+ 
+  If reg.company.value = Empty Then
+     MsgBox "「公司名稱」不得為空白！", 64, "未填寫正確!"
+     focusto(0)
+     Exit Sub
+  End if
+  
+  
+  If reg.name.value = Empty Then
+     MsgBox "「聯絡人」不得為空白！", 64, "未填寫正確!"
+     focusto(1)
+     Exit Sub
+  End if
+  If reg.no.value = Empty Then
+     MsgBox "「郵遞區號」不得為空白！", 64, "未填寫正確!"
+     focusto(3)
+     Exit Sub
+  End if
+
+    If reg.address.value = Empty Then
+     MsgBox "「地址」不得為空白！", 64, "未填寫正確!"
+     focusto(2)
+     Exit Sub
+  End if
+  
+ 
+  
+  If reg.phone.value = Empty Then
+     MsgBox "「連絡電話」不得為空白！", 64, "未填寫正確!"
+     focusto(4)
+     Exit Sub
+  End if
+   If InStr(reg.mail.value, "@") = 0 Then
+     MsgBox "E-mail當中需包含 '@' 字元！", 64, "未填寫正確!"
+     focusto(6)
+     Exit Sub
+  End if
+
+  'Submit(傳送)表單資料至Web Server
+  reg.Submit
+End Sub
+
+Sub focusto(x)
+    '將游標定位於某個欄位
+    document.reg.elements(x).focus()
+End Sub
+-->
+</script>
+<body bgcolor="#FFFFFF">
+
+<form method="POST" action="DownInfo.asp"  name="reg">
+
+  
+  <p align="center" style="margin-top: 0; margin-bottom: 0">
+  　</p>
+
+  
+  <p align="center" style="margin-top: 8; margin-bottom: 8">
+  <font color="#3333CC">請填寫以下資料，我們將儘速將軟體送到您手中。謝謝！ </font></p>
+
+  
+<p style="margin-top: 8; margin-bottom: 8">
+  
+  <font color="#008000">　　　　　　　　　　　　&nbsp; 公司名稱：</font><input type="text" name="company" size="35"></p>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+<p style="margin-top: 8; margin-bottom: 8">
+  
+  <font color="#008000">聯 絡 人&nbsp; ：</font><font size="3"><small><input type="text" name="name" size="20"></small></font></p>
+<p style="margin-top: 8; margin-bottom: 8">
+  
+  <font color="#008000">郵遞區號：</font><small><input type="text" name="No" size="7"></small></p>
+  <p style="margin-top: 8; margin-bottom: 8"> 
+  <font color="#008000">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 址：</font><input type="text" name="address" size="35">　</p>
+  <p style="margin-top: 8; margin-bottom: 8"> 
+  <font color="#008000">電 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 話：</font><input type="text" name="phone" size="20"></p>
+  <p style="margin-top: 8; margin-bottom: 8"> 
+  <font color="#008000">傳 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 真：</font><input type="text" name="fax" size="20"></p>
+  <p style="margin-top: 8; margin-bottom: 8"><font color="#008000">&nbsp; E-mail　 :&nbsp;
+  </font> <input type="text" name="mail" size="20">&nbsp; </p>
+            <p style="margin-top: 8; margin-bottom: 8">
+<font color="#008000">&nbsp;行 業 別 ：</font><small> <select name="Item">
+                <option value="電腦系統相關業">電腦系統相關業</option>
+                <option value="電子、資訊、通訊製造業 ">電子、資訊、通訊製造業 </option>
+                <option value="電子零件．電腦週邊相關業">電子零件．電腦週邊相關業</option>
+                <option value="金融証券產險相關業">金融証券產險相關業</option>
+                <option value="廣告行銷公關業">廣告行銷公關業</option>
+                <option value="成衣、製鞋、體育用品製造業">成衣、製鞋、體育用品製造業</option>
+                <option value="人壽保險業．傳銷相關業">人壽保險業．傳銷相關業</option>
+                <option value="百貨．運輸物流倉儲服務業">百貨．運輸物流倉儲服務業</option>
+                <option value="不動產．仲介相關業">不動產．仲介相關業</option>
+                <option value="文具玩具禮品業">文具玩具禮品業</option>
+                <option value="塑化紡織相關業">塑化紡織相關業</option>
+                <option value="空調水機電工程業">空調水機電工程業</option>
+                <option value="電機電工器材．五金．其他機械相關業">電機電工器材．五金．其他機械相關業</option>
+                <option value="汽機車及自行車相關業">汽機車及自行車相關業</option>
+                <option value="機械、汽機車、儀器設備製造業 ">機械、汽機車、儀器設備製造業 </option>
+<option value="法証會計建築事務所">法証會計建築事務所</option>
+                <option value="電訊郵政汽電公用事業">電訊郵政汽電公用事業</option>
+                <option value="學校及文教機構">學校及文教機構</option>
+                <option value="環保及公共衛生相關業">環保及公共衛生相關業</option>
+                <option value="進出口貿易業 ">進出口貿易業 </option>
+                <option value="光電通信器材相關業、其他精密工業">光電通信器材相關業、其他精密工業</option>
+                <option value="其他">其他</option>
+              </select></small></p>
+            <p style="margin-top: 8; margin-bottom: 8"><font color="#008000">軟體總類：</font><font color="#FF0000">(<font size="2">可複選，請按Ctrl+滑鼠左鍵</font>)</font></p>
+  <p style="margin-top: 8; margin-bottom: 8"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <select size="3" name="product" multiple>
+  <option>傳輸王 CNC機台傳輸軟體</option>
+  <option>管理贏家 ERP/進銷存/會計系統</option>
+  <option>MRP 生管系統</option>
+  <option>車銑床程式製作軟體</option>
+
+  </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </small></p>
+  <p style="margin-top: 8; margin-bottom: 8"><font size="2">&nbsp; </font>
+  <font color="#008000">留&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 言：</font></p>
+  <p style="margin-top: 8; margin-bottom: 8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <textarea rows="6" name="message" cols="32"></textarea></p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+  <p style="margin-top: 8; margin-bottom: 8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="送出" onclick="datacheck">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="重新設定" name="B2"></p>
+</form>
+
+</body>
+
+</html>

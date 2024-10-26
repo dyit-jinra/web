@@ -1,0 +1,393 @@
+<!-- # ticker start for 首頁-->
+
+<HTML><HEAD><TITLE>速報</TITLE>
+
+<META http-equiv=Content-Type content="text/html; charset=big5">
+
+
+
+<STYLE type=text/css>
+
+A {
+
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; COLOR: #43508B; LINE-HEIGHT: normal; TEXT-DECORATION: none
+
+; font-variant: normal}
+
+A:hover {
+
+	COLOR: #cc3300
+
+}
+
+</STYLE>
+
+
+
+
+
+
+
+<SCRIPT language=JAVASCRIPT>
+
+<!--
+
+
+
+// --- Global variable stuff here
+
+       var theItemCount;
+
+       var theCurrentStory;
+
+       var theCurrentLength;
+
+       var theStorySummary;
+
+       var theTargetLink;
+
+       var theCharacterTimeout;
+
+       var theStoryTimeout;
+
+       var theBrowserVersion;
+
+       var theWidgetOne;
+
+       var theWidgetTwo;
+
+       var theSpaceFiller;
+
+       var theLeadString;
+
+       var theStoryState;
+
+
+
+
+
+// --- Check for old browser and force applet
+
+       theBrowserVersion = parseInt(navigator.appVersion);
+
+
+
+       if (theBrowserVersion < 4)
+
+       {
+
+          location.href = "ticker-974.htm";
+
+       }
+
+
+
+
+
+
+
+// --- Only run for V4 browsers (check browser again here - some old browsers won't do this inline)
+
+       function startTicker()
+
+       {
+
+          theBrowserVersion = parseInt(navigator.appVersion);
+
+
+
+          if (theBrowserVersion < 4)
+
+          {
+
+             location.href = "/ticker/ticker_applet-974.htm";
+
+             return;
+
+          }
+
+
+
+
+
+
+
+// ------ Check and fixup incoming data block
+
+          if(!document.body.children.incoming.children.properties)
+
+          {
+
+             document.all.incoming.innerHTML = "<DIV ID=\"properties\"><DIV ID=\"itemcount\">1</DIV></DIV><DIV ID=\"stories\"><DIV ID=\"1\"><DIV ID=\"Summary\">東森新聞報 ET Today.com</DIV><DIV ID=\"SiteLink\">/index.htm</DIV><DIV ID=\"UrlLink\"></DIV></DIV></DIV>";
+
+          }
+
+
+
+
+
+
+
+// ------ Set up initial values
+
+          theCharacterTimeout = 50;
+
+          theStoryTimeout     = 5000;
+
+          theWidgetOne        =  "_";
+
+          theWidgetTwo        =  "-";
+
+
+
+
+
+
+
+// ------ Set up initial values
+
+          theStoryState       = 1;
+
+          theItemCount        = document.body.children.incoming.children.properties.children.itemcount.innerText;
+
+          theCurrentStory     = 0;
+
+          theCurrentLength    = 0;
+
+          theLeadString       = " ";
+
+          theSpaceFiller      = " ";
+
+
+
+
+
+// ------ Begin the ticker       
+
+          runTheTicker();
+
+       }
+
+
+
+
+
+
+
+// --- The basic rotate function
+
+       function runTheTicker()
+
+       {
+
+          if(theStoryState == 1)
+
+          {
+
+             setupNextStory();
+
+          }
+
+
+
+          if(theCurrentLength != theStorySummary.length)
+
+          {
+
+             drawStory();
+
+          }
+
+          else
+
+          {
+
+             closeOutStory();
+
+          }
+
+       }
+
+
+
+
+
+
+
+// --- Index to next story
+
+       function setupNextStory()
+
+       {
+
+          theStoryState = 0;
+
+
+
+          theCurrentStory++;
+
+
+
+          theCurrentStory = theCurrentStory % theItemCount;
+
+          
+
+          theStorySummary = document.body.children.incoming.children.stories.children[theCurrentStory].children.Summary.innerText;
+
+
+
+          theTargetLink   = document.body.children.incoming.children.stories.children[theCurrentStory].children.SiteLink.innerText;
+
+
+
+          if(theTargetLink == "")
+
+          {
+
+             theTargetLink = document.body.children.incoming.children.stories.children[theCurrentStory].children.UrlLink.innerText;
+
+          }
+
+   
+
+          theCurrentLength = 0;
+
+
+
+          document.all.hottext.href = theTargetLink;
+
+       }
+
+
+
+
+
+
+
+// --- Draw a teletype line
+
+       function drawStory()
+
+       {
+
+          var myWidget;
+
+          
+
+          if((theCurrentLength % 2) == 1)
+
+          {
+
+             myWidget = theWidgetOne;
+
+          }
+
+          else
+
+          {
+
+             myWidget = theWidgetTwo;
+
+          }
+
+          document.all.hottext.innerHTML = theLeadString + theStorySummary.substring(0,theCurrentLength) + myWidget + theSpaceFiller;
+
+          theCurrentLength++;
+
+          setTimeout("runTheTicker()", theCharacterTimeout);
+
+       }
+
+
+
+
+
+
+
+// --- Finalise the item
+
+       function closeOutStory()
+
+       {
+
+          document.all.hottext.innerHTML = theLeadString + theStorySummary + theSpaceFiller;
+
+          theStoryState = 1;
+
+          setTimeout("runTheTicker()", theStoryTimeout);
+
+       }
+
+       
+
+       
+
+       
+
+//-->
+
+</SCRIPT>
+</HEAD>
+<BODY bgColor=#ffffff onload=startTicker();>
+
+<TABLE>
+  <TR><TD>
+      <DIV id=visible style="width: 16; height: 19"><A href="/" id=hottext target="_blank"></A></DIV>
+  </TD></TR>
+</TABLE>
+<DIV id=incoming style="DISPLAY: none">
+<DIV id=stories>
+<DIV id=0>
+      <DIV id=Summary>松隆子因「真心情」被小田和正弄哭了？！ (2003/07/28 17:26)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489697.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+
+<DIV id=1>
+      <DIV id=Summary>羅素克洛【怒海爭鋒】　拿電腦特效和暴風雨開戰 (2003/07/28 17:23)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489695.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+
+<DIV id=2>
+      <DIV id=Summary>中科動土　游錫&#22531;：中央與地方執行力的表現 (2003/07/28 17:07)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489687.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+
+
+<DIV id=3>
+ <script language=JavaScript src=http://ad1.ettoday.com/Adser/tickerad1.php ></script>
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+
+<DIV id=4>
+      <DIV id=Summary>僑委會駐巴秘書林永福涉性侵　8月調回　監院將查辦 (2003/07/28 17:03)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489688.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+<DIV id=5>
+      <DIV id=Summary>尊龍火燒車　家屬抵制頭七法會　6條人命求償9600萬 (2003/07/28 17:02)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489633.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+<DIV id=6>
+      <DIV id=Summary>東森購物與建華銀攜手合作　提供供應商線上融資服務 (2003/07/28 17:01)</DIV>
+      <DIV id=UrlLink>http://www.ettoday.com/2003/07/28/91-1489684.htm</DIV> 
+<DIV id=SiteLink></DIV>
+<DIV id=Duration>10 seconds</DIV>
+</DIV>
+
+</DIV>
+<DIV id=properties>
+ <DIV id=itemcount>7</DIV>
+</DIV>
+</DIV>
+</BODY></HTML>
+<!-- # ticker end -->
